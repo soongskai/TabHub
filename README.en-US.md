@@ -1,6 +1,6 @@
 # TabHub
 
-English | [中文](README.zh-CN.md)
+English | [中文](README.md)
 
 TabHub is a lightweight self-hosted bookmark homepage built with Go, SQLite, and vanilla frontend code. It works well as a personal server homepage, NAS dashboard, intranet start page, or browser homepage.
 
