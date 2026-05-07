@@ -1,0 +1,32 @@
+# Build outputs
+tabhub
+tabhub.exe
+bookmark-home
+bookmark-home.exe
+*.zip
+*.7z
+*.rar
+
+# Runtime data
+data/*.db
+data/*.db-*
+data/uploads/*
+!data/uploads/.gitkeep
+!data/uploads/icons/
+data/uploads/icons/*
+!data/uploads/icons/.gitkeep
+!data/uploads/wallpapers/
+data/uploads/wallpapers/*
+!data/uploads/wallpapers/.gitkeep
+
+# Test/runtime residue
+internal/services/data/
+
+# Local editor and OS files
+.idea/
+.vscode/
+*.swp
+*.tif
+*.tiff
+Thumbs.db
+.DS_Store

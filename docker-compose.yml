@@ -1,0 +1,26 @@
+services:
+  tabhub:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: tabhub:latest
+    container_name: tabhub
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-5305}:${PORT:-8080}"
+    env_file:
+      - ./config.env
+    environment:
+      CONFIG_FILE: "/app/config.env"
+      GOMEMLIMIT: "64MiB"
+      GOGC: "50"
+    volumes:
+      - type: bind
+        source: ./data
+        target: /app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider http://127.0.0.1:${PORT:-8080}/login || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
